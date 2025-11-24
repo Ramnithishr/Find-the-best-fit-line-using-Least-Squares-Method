@@ -24,40 +24,34 @@ RegisterNumber:  212224230219
 
 import numpy as np
 import matplotlib.pyplot as plt
-
-X_input = input()
-Y_input = input()
-
-X = np.array([int(x) for x in X_input.split()])
-Y = np.array([int(y) for y in Y_input.split()])
-
-X_mean = np.mean(X)
-Y_mean = np.mean(Y)
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+x_mean=np.mean(x)
+y_mean=np.mean(y)
 num=0
-denom=0
-
-for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denom+=(X[i]-X_mean)**2
-
-m=num/denom
-b=Y_mean-m*X_mean
-print('Register number:')
-print('Name:')
+demo=0
+for i in range(len(x)):
+    num+=(x[i]-x_mean)*(y[i]-y_mean)
+    demo+=(x[i]-x_mean)**2
+m=num/demo
+b=y_mean-m*x_mean
+print('Register number:212224040280')
+print('Name:Rogith J')
 print('Slope:',m)
 print('Y-intercept:',b)
-
-y_predicted=m*X+b
+y_predicted=m*x+b
 print('Predicted value:',y_predicted)
-
-plt.scatter(X,Y)
-plt.plot(X,y_predicted,color='red')
+plt.scatter(x,y)
+plt.plot(x,y_predicted,color='red')
 plt.show()
 
 ```
 
 ## Output:
-<img width="935" height="481" alt="Screenshot 2025-08-11 093205" src="https://github.com/user-attachments/assets/d2c7c53e-b439-4883-b771-5f7bae4c2895" />
+
+8,2,11,6,5,4,12,9,6,1 3,10,3,6,8,12,1,4,9,14 Register number:212224040280 Name:Rogith J Slope: -1.1064189189189189 Y-intercept: 14.08108108108108 Predicted value: [ 5.22972973 11.86824324 1.91047297 7.44256757 8.54898649 9.65540541 0.80405405 4.12331081 7.44256757 12.97466216]
+
+<img width="543" height="413" alt="475380368-b040fc15-d7de-40a3-bced-a37651ba04c2" src="https://github.com/user-attachments/assets/0e5b30f1-2563-49b8-9594-e48acb22dc41" />
 
 
 
